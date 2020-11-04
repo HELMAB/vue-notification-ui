@@ -2,7 +2,7 @@
   <div class="notification-item fadeOut"
        v-if="show">
     <div class="notification-icon"
-         style="background-image: url('https://vuejs.org/images/logo.png')">
+         style="background-image: url('https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg')">
     </div>
     <div class="notification-content">
       <div class="notification-title">
