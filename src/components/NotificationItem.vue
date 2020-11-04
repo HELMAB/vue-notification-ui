@@ -1,6 +1,5 @@
 <template>
-  <div class="notification-item fadeOut"
-       v-if="show">
+  <div class="notification-item">
     <div class="notification-icon"
          style="background-image: url('https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg')">
     </div>
@@ -9,7 +8,7 @@
         <div class="notification-title-text">
           <h3>{{ notification.title || 'Installed CLI Plugins' }}</h3>
         </div>
-        <span class="notification-close" @click="onClose">&times;</span>
+        <span class="notification-close" @click="removeNotification">&times;</span>
       </div>
       <div class="notification-body">
         <div class="notification-body-text">
@@ -27,17 +26,25 @@ export default {
   props: {
     notification: {
       type: Object,
-    }
-  },
-  data () {
-    return {
-      show: true,
+    },
+    duration: {
+      type: Number,
     }
   },
   methods: {
-    onClose() {
-      this.show = false
+    removeNotification() {
+      this.$emit('removeNotificationItem', this.notification)
     }
+  },
+  async mounted() {
+    const self = this
+    const fadeNotification = () => {
+      return new Promise(resolve => setTimeout(resolve, self.duration))
+    }
+
+    await fadeNotification().then(() => {
+      this.removeNotification()
+    })
   }
 }
 </script>
