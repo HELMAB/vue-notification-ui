@@ -29,11 +29,14 @@ export default {
     },
     duration: {
       type: Number,
+    },
+    notificationIndex: {
+      type: Number
     }
   },
   methods: {
-    removeNotification() {
-      this.$emit('removeNotificationItem', this.notification)
+    async removeNotification() {
+      this.$store.commit('notification/remove', this.notification)
     }
   },
   async mounted() {
@@ -42,8 +45,8 @@ export default {
       return new Promise(resolve => setTimeout(resolve, self.duration))
     }
 
-    await fadeNotification().then(() => {
-      this.removeNotification()
+    await fadeNotification().then(async () => {
+      await this.removeNotification()
     })
   }
 }

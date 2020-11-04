@@ -1,8 +1,8 @@
 <template>
   <div :class="`notification ${options.position}`">
     <NotificationItem
-      @removeNotificationItem="removeNotificationItem"
       :key="key"
+      :notification-index="key"
       :duration="options.duration"
       v-for="(notification, key) in notifications"
       :notification="notification"/>
@@ -10,24 +10,32 @@
 </template>
 
 <script>
-
-import NotificationItem from "@/plugins/notification-ui/src/components/NotificationItem"
+import {mapState} from 'vuex'
+import NotificationItem from "./components/NotificationItem"
 
 export default {
   name: "Notification",
   components: {NotificationItem},
   data() {
     return {
-      notifications: [],
       options: {
         position: 'notification-top-right',
         duration: 2500,
       }
     }
   },
+  computed: {
+    ...mapState({
+      notifications: state => state.notification.notifications
+    })
+  },
   methods: {
-    removeNotificationItem(notification) {
-      this.notifications.splice(this.notifications.indexOf(notification), 1)
+    addNewNotification(id, title, body) {
+      this.$store.commit('notification/add', {
+        id: id,
+        title: title,
+        body: body
+      })
     }
   }
 }
