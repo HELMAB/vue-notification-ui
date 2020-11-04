@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+  --error: red;
+  --success: blue;
+  --white: #fff;
+  --gap: 20px;
+  --notification-icon-width: 80px;
+  --notification-image-width: 67px;
+}
+
+.notification {
+  position: fixed;
+  font-family: 'Raleway', sans-serif;
+  padding: 10px;
+  width: 380px;
+  height: auto;
+}
+
+.notification-item {
+  font-family: 'Raleway', sans-serif;
+  position: relative;
+  padding: 10px;
+  width: 380px;
+  background-color: var(--white);
+  border-radius: 8px;
+  box-shadow: 0 12px 28px 0 rgba(0, 0, 0, 0.2),
+  0 2px 4px 0 rgba(0, 0, 0, 0.1),
+  inset 0 0 0 1px rgba(255, 255, 255, 0);
+  display: grid;
+  grid-template-columns: var(--notification-icon-width) 1fr;
+  grid-gap: 10px;
+  margin-bottom: 15px;
+  cursor: pointer;
+}
+
+.notification-top-left {
+  left: var(--gap);
+  top: var(--gap);
+}
+
+.notification-top-right {
+  right: var(--gap);
+  top: var(--gap);
+}
+
+.notification-bottom-right {
+  right: var(--gap);
+  bottom: var(--gap);
+}
+
+.notification-bottom-left {
+  left: var(--gap);
+  bottom: var(--gap);
+}
+
+.notification-title {
+  position: relative;
+}
+
+.notification-title h3 {
+  line-height: 1.075;
+  padding: 0px;
+  margin: 8px 0px 0px;
+}
+
+.notification-close {
+  position: fixed;
+  right: 20px;
+  width: 25px;
+  height: 25px;
+  background: #f1f1f1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100%;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+  line-height: 0;
+}
+
+.notification-icon {
+  height: var(--notification-icon-width);
+  width: 100%;
+  border-radius: 100%;
+  background-size: cover;
+}
+
+.notification-body-text {
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  display: -webkit-box;
+  overflow-y: hidden;
+}
+
+.notification-title-text {
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  display: -webkit-box;
+  overflow-y: hidden;
+  width: 90%;
+}
+
+.notification-body-time {
+  color: hsl(214deg 89% 52%);
+}
+
+.fadeOut {
+  -webkit-animation-name: fadeOut;
+  animation-name: fadeOut;
+  -webkit-animation-duration: 10s;
+  animation-duration: 10s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+@-webkit-keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 0;
+  }
+}
