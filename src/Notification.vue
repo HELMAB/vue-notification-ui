@@ -2,7 +2,6 @@
   <div :class="`notification ${options.position}`">
     <NotificationItem
       :key="key"
-      :notification-index="key"
       :duration="options.duration"
       v-for="(notification, key) in notifications"
       :notification="notification"/>
@@ -30,11 +29,13 @@ export default {
     })
   },
   methods: {
-    addNewNotification(id, title, body) {
+    addNewNotification(id, title, body, dateTime, icon) {
       this.$store.commit('notification/add', {
         id: id,
         title: title,
-        body: body
+        body: body,
+        dateTime: dateTime,
+        icon: icon
       })
     }
   }

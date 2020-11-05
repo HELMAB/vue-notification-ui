@@ -1,21 +1,24 @@
 <template>
   <div class="notification-item">
     <div class="notification-icon"
-         style="background-image: url('https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg')">
+         :class="{'no-circle' : notification.icon === null}"
+         :style="`background-image: url(${icon});`">
     </div>
     <div class="notification-content">
       <div class="notification-title">
         <div class="notification-title-text">
-          <h3>{{ notification.title || 'Installed CLI Plugins' }}</h3>
+          <h3 v-html="notification.title"></h3>
         </div>
-        <span class="notification-close" @click="removeNotification">&times;</span>
       </div>
       <div class="notification-body">
         <div class="notification-body-text">
-          <p>{{ notification.body || 'Welcome to Your Vue.js App' }}</p>
+          <p class="no-margin">{{ notification.body }}</p>
         </div>
-        <small class="notification-body-time">A minutes ago</small>
+        <small class="notification-body-time">{{ notification.dateTime }}</small>
       </div>
+    </div>
+    <div class="notification-close-action">
+      <span class="notification-close" @click="removeNotification">&times;</span>
     </div>
   </div>
 </template>
@@ -29,9 +32,15 @@ export default {
     },
     duration: {
       type: Number,
-    },
-    notificationIndex: {
-      type: Number
+    }
+  },
+  computed: {
+    icon() {
+      if (this.notification && this.notification.icon) {
+        return this.notification.icon
+      } else {
+        return 'https://www.flaticon.com/svg/static/icons/svg/876/876183.svg'
+      }
     }
   },
   methods: {
