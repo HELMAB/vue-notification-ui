@@ -1,6 +1,6 @@
 {
   "name": "vue-notification-ui",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Vue Notification UI",
   "main": "src/notification.js",
   "scripts": {
