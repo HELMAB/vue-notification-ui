@@ -5,6 +5,11 @@ Vue Notification UI
 
 A simple push the notification ui with Vuejs
 
+## Installation
+
+```
+npm install vue-notification-ui --save
+```
 
 ## Usage
 
@@ -13,7 +18,8 @@ import Vue from 'vue'
 import notification from 'vue-notification-ui'
 
 Vue.use(notification, {
-  position: 'notification-bottom-left'
+  position: 'notification-bottom-left',
+  duration: 5000
 })
 
 
