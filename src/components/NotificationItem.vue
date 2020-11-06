@@ -1,10 +1,11 @@
 <template>
-  <div class="notification-item" @click="handleClick">
+  <div class="notification-item">
     <div class="notification-icon"
+         @click="handleClick"
          :class="{'no-circle' : notification.icon === null}"
          :style="`background-image: url(${icon});`">
     </div>
-    <div class="notification-content">
+    <div class="notification-content" @click="handleClick">
       <div class="notification-title">
         <div class="notification-title-text">
           <h3 v-html="notification.title"></h3>
