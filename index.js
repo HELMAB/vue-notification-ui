@@ -17,8 +17,9 @@ export default {
       vm.options = options
     }
 
-    Vue.prototype.$notification = (title, body, dateTime, icon = null) => {
-      vm.addNewNotification(Math.random(), title, body, dateTime, icon)
+    // eslint-disable-next-line no-unused-vars
+    Vue.prototype.$notification = (title, body, dateTime, icon = null, handleClick) => {
+      vm.addNewNotification(Math.random(), title, body, dateTime, icon, handleClick)
     }
   }
 }

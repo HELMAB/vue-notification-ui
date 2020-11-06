@@ -1,5 +1,5 @@
 <template>
-  <div class="notification-item">
+  <div class="notification-item" @click="handleClick">
     <div class="notification-icon"
          :class="{'no-circle' : notification.icon === null}"
          :style="`background-image: url(${icon});`">
@@ -32,6 +32,9 @@ export default {
     },
     duration: {
       type: Number,
+    },
+    callback: {
+      type: Function
     }
   },
   computed: {
@@ -44,6 +47,11 @@ export default {
     }
   },
   methods: {
+    handleClick () {
+      if (this.callback) {
+        this.callback()
+      }
+    },
     async removeNotification() {
       this.$store.commit('notification/remove', this.notification)
     }

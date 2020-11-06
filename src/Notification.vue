@@ -1,6 +1,7 @@
 <template>
   <div :class="`notification ${options.position}`">
     <NotificationItem
+      :callback="handleClicked"
       :key="key"
       :duration="options.duration"
       v-for="(notification, key) in notifications"
@@ -19,8 +20,9 @@ export default {
     return {
       options: {
         position: 'notification-top-right',
-        duration: 2500,
-      }
+        duration: 2500
+      },
+      handleClick: null,
     }
   },
   computed: {
@@ -29,7 +31,11 @@ export default {
     })
   },
   methods: {
-    addNewNotification(id, title, body, dateTime, icon) {
+    handleClicked () {
+      this.handleClick()
+    },
+    addNewNotification(id, title, body, dateTime, icon, handleClick) {
+      this.handleClick = handleClick
       this.$store.commit('notification/add', {
         id: id,
         title: title,
