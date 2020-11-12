@@ -6,15 +6,22 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": ["vuejs", "plugins", "notification", "toastr", "notification-ui"],
+  "keywords": [
+    "vuejs",
+    "plugins",
+    "notification",
+    "toastr",
+    "notification-ui"
+  ],
   "author": "HEL Mab",
   "license": "ISC",
   "dependencies": {
+    "font-awesome": "^4.7.0",
     "vuex": "^3.5.1"
   },
   "repository": {
-    "type" : "git",
-    "url" : "git+https://github.com/HELMAB/vue-notification-ui.git"
+    "type": "git",
+    "url": "git+https://github.com/HELMAB/vue-notification-ui.git"
   },
   "bugs": {
     "url": "https://github.com/HELMAB/vue-notification-ui/issues"

@@ -1,6 +1,7 @@
 // eslint-disable-next-line no-unused-vars
 import './src/assets/css/notification.css'
 import './src/assets/css/animate.min.css'
+import 'font-awesome/css/font-awesome.min.css'
 import Notification from "./src/Notification"
 import store from "./src/store"
 

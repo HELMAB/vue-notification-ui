@@ -83,9 +83,9 @@ export default {
         case 'info':
           return 'info'
         case 'warning':
-          return 'exclamation-triangle'
+          return 'exclamation'
         case 'danger':
-          return 'ban'
+          return 'remove'
         default:
           return 'bell'
       }

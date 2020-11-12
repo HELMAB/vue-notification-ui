@@ -7,6 +7,7 @@
   --gap-right: 40px;
   --notification-icon-width: 80px;
   --notification-image-width: 67px;
+  --gray: #555555;
   --gray-light: #f1f1f1;
 
   --success: #32c851;
@@ -129,7 +130,7 @@
 }
 
 .notification-body-time {
-  color: var(--blue);
+  color: var(--gray);
 }
 
 .no-circle {
@@ -141,55 +142,59 @@
 }
 
 .success {
-  background-color: var(--success) !important;
-  color: var(--white);
+  /*background-color: var(--success) !important;*/
+  /*color: var(--white);*/
 }
 
 .success .notification-icon {
-  background-color: var(--success-dark) !important;
+  /*background-color: var(--success-dark) !important;*/
+  background-color: var(--success) !important;
 }
 
 .success .notification-close {
-  background-color: var(--success-dark) !important;
+  /*background-color: var(--success-dark) !important;*/
 }
 
 .info {
-  background-color: var(--info) !important;
-  color: var(--white);
+  /*background-color: var(--info) !important;*/
+  /*color: var(--white);*/
 }
 
 .info .notification-icon {
-  background-color: var(--info-dark) !important;
+  /*background-color: var(--info-dark) !important;*/
+  background-color: var(--info) !important;
 }
 
 .info .notification-close {
-  background-color: var(--info-dark) !important;
+  /*background-color: var(--info-dark) !important;*/
 }
 
 .warning {
-  background-color: var(--warning) !important;
-  color: var(--white);
+  /*background-color: var(--warning) !important;*/
+  /*color: var(--white);*/
 }
 
 .warning .notification-icon {
-  background-color: var(--warning-dark) !important;
+  /*background-color: var(--warning-dark) !important;*/
+  background-color: var(--warning) !important;
 }
 
 .warning .notification-close {
-  background-color: var(--warning-dark) !important;
+  /*background-color: var(--warning-dark) !important;*/
 }
 
 .danger {
-  background-color: var(--danger) !important;
-  color: var(--white);
+  /*background-color: var(--danger) !important;*/
+  /*color: var(--white);*/
 }
 
 .danger .notification-icon {
-  background-color: var(--danger-dark) !important;
+  /*background-color: var(--danger-dark) !important;*/
+  background-color: var(--danger) !important;
 }
 
 .danger .notification-close {
-  background-color: var(--danger-dark) !important;
+  /*background-color: var(--danger-dark) !important;*/
 }
 
 .default .notification-icon {

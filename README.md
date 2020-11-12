@@ -1,7 +1,7 @@
 Vue Notification UI
 ------------------
 
-![Alt](./src/assets/img/vue-packages.png)
+![Alt](./src/assets/img/vue-notification-ui.gif)
 
 A simple push the notification ui with Vuejs
 
