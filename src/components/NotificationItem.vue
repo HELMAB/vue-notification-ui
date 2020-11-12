@@ -64,8 +64,6 @@ export default {
         const isIcon = this.notification.icon.startsWith('http')
         if (isNormal || isIcon) {
           return this.notification.icon
-        } else {
-          console.warn('[VUE NOTIFICATION UI]: support only absolute image file and such as success, info, warning, danger type.')
         }
       }
       return 'default'

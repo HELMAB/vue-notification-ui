@@ -16,7 +16,9 @@ export default {
     document.body.appendChild(vm.$el)
 
     if (options) {
-      vm.options = options
+      for (const [key, value] of Object.entries(options)) {
+        vm.options[key] = value
+      }
     }
 
     // eslint-disable-next-line no-unused-vars
