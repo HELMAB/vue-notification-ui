@@ -47,3 +47,4 @@ this.$notification(
 | body      | string: `required: true`      |  |
 | icon | string: `optional` | - Absolute file image <br/> - success <br/> - info <br/> - warning <br/> - danger |
 | callback | function: `optional` | |
+| time | string: `optional` | A minutes ago |
