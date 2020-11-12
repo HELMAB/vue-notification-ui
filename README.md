@@ -41,10 +41,10 @@ this.$notification(
 
 ## Notification options
 
-| params        | default           | description  |
-| :------------- |:-------------| -----|
-| title      | string: `required: true` |  |
-| body      | string: `required: true`      |  |
-| icon | string: `optional` | - Absolute file image <br/> - success <br/> - info <br/> - warning <br/> - danger |
+| params | default | description  |
+| ----- | ----- | ----- |
+| title | string: `required: true` |  |
+| body | string: `required: true` |  |
+| icon | string: `optional` | - absolute file image <br/> - success <br/> - info <br/> - warning <br/> - danger |
 | callback | function: `optional` | |
 | time | string: `optional` | A minutes ago |
