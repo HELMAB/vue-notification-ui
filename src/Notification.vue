@@ -3,6 +3,7 @@
        :style="classPosition">
     <NotificationItem
       :callback="handleClicked"
+      :position="options.position"
       :key="key"
       :duration="options.duration"
       v-for="(notification, key) in notifications"

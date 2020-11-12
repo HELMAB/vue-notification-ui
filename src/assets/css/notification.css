@@ -8,13 +8,27 @@
   --notification-icon-width: 80px;
   --notification-image-width: 67px;
   --gray-light: #f1f1f1;
+
+  --success: #32c851;
+  --info: #3cb5e7;
+  --warning: #f78800;
+  --danger: #f63547;
+
+  --success-dark: #38b352;
+  --info-dark: #3faad6;
+  --warning-dark: #e48612;
+  --danger-dark: #ca2c3b;
+
+  --default: #276eb5;
+
+  --width: 420px;
 }
 
 .notification {
   position: fixed;
   font-family: 'Raleway', 'Dangrek', sans-serif !important;
   padding: 10px;
-  width: 380px;
+  width: var(--width);
   height: auto;
   z-index: 1030 !important;
 }
@@ -23,7 +37,7 @@
   font-family: 'Raleway', sans-serif;
   position: relative;
   padding: 10px;
-  width: 380px;
+  width: var(--width);
   background-color: var(--white);
   border-radius: 8px;
   box-shadow: 0 12px 28px 0 rgba(0, 0, 0, 0.2),
@@ -60,10 +74,11 @@
   position: relative;
 }
 
-.notification-title h3 {
+.notification-title p {
   padding: 0;
   margin: 8px 0 0;
   font-family: 'Raleway', 'Dangrek', sans-serif !important;
+  font-weight: bold;
 }
 
 .notification-close {
@@ -85,6 +100,11 @@
   width: 100%;
   border-radius: 100%;
   background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 42px;
+  color: var(--white);
 }
 
 .notification-body p,
@@ -118,4 +138,61 @@
 
 .no-margin {
   margin: 0 !important;
+}
+
+.success {
+  background-color: var(--success) !important;
+  color: var(--white);
+}
+
+.success .notification-icon {
+  background-color: var(--success-dark) !important;
+}
+
+.success .notification-close {
+  background-color: var(--success-dark) !important;
+}
+
+.info {
+  background-color: var(--info) !important;
+  color: var(--white);
+}
+
+.info .notification-icon {
+  background-color: var(--info-dark) !important;
+}
+
+.info .notification-close {
+  background-color: var(--info-dark) !important;
+}
+
+.warning {
+  background-color: var(--warning) !important;
+  color: var(--white);
+}
+
+.warning .notification-icon {
+  background-color: var(--warning-dark) !important;
+}
+
+.warning .notification-close {
+  background-color: var(--warning-dark) !important;
+}
+
+.danger {
+  background-color: var(--danger) !important;
+  color: var(--white);
+}
+
+.danger .notification-icon {
+  background-color: var(--danger-dark) !important;
+}
+
+.danger .notification-close {
+  background-color: var(--danger-dark) !important;
+}
+
+.default .notification-icon {
+  color: var(--white);
+  background-color: var(--default);
 }

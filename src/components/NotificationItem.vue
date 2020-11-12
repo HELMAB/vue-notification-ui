@@ -1,14 +1,21 @@
 <template>
-  <div class="notification-item">
-    <div class="notification-icon"
-         @click="handleClick"
-         :class="{'no-circle' : notification.icon === null}"
-         :style="`background-image: url(${icon});`">
-    </div>
+  <div :class="`notification-item animate__animated animate__${animatePosition} animate__faster ${icon}`">
+    <template v-if="isNormalNotification">
+      <div class="notification-icon">
+        <i :class="`fa fa-${notificationIcon}`"></i>
+      </div>
+    </template>
+    <template v-else>
+      <div class="notification-icon"
+           @click="handleClick"
+           :class="{'no-circle' : notification.icon === null}"
+           :style="`background-image: url(${icon});`">
+      </div>
+    </template>
     <div class="notification-content" @click="handleClick">
       <div class="notification-title">
         <div class="notification-title-text">
-          <h3 v-html="notification.title"></h3>
+          <p v-html="notification.title"></p>
         </div>
       </div>
       <div class="notification-body">
@@ -36,19 +43,56 @@ export default {
     },
     callback: {
       type: Function
+    },
+    position: {
+      type: String,
     }
   },
   computed: {
+    animatePosition () {
+      if (this.position.includes('right')) {
+        return 'slideInRight'
+      } else if (this.position.includes('left')) {
+        return 'slideInLeft'
+      } else {
+        return null
+      }
+    },
     icon() {
       if (this.notification && this.notification.icon) {
-        return this.notification.icon
-      } else {
-        return 'https://www.flaticon.com/svg/static/icons/svg/876/876183.svg'
+        const isNormal = (['success', 'info', 'warning', 'danger']).includes(this.notification.icon)
+        const isIcon = this.notification.icon.startsWith('http')
+        if (isNormal || isIcon) {
+          return this.notification.icon
+        } else {
+          console.warn('[VUE NOTIFICATION UI]: support only absolute image file and such as success, info, warning, danger type.')
+        }
+      }
+      return 'default'
+    },
+    isNormalNotification() {
+      if (this.icon && this.icon.startsWith('http')) {
+        return false
+      }
+      return true
+    },
+    notificationIcon() {
+      switch (this.icon) {
+        case 'success':
+          return 'check'
+        case 'info':
+          return 'info'
+        case 'warning':
+          return 'exclamation-triangle'
+        case 'danger':
+          return 'ban'
+        default:
+          return 'bell'
       }
     }
   },
   methods: {
-    handleClick () {
+    handleClick() {
       if (this.callback) {
         this.callback()
       }

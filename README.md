@@ -28,7 +28,22 @@ Vue.use(notification, {
 
 
 // call $notification api
-this.$notification('Vue Notification UI', 'A simple push the notification ui with Vuejs', 'A minute ago', null, async () => {
-  console.log('Clicked notification')
-})
+this.$notification(
+  'Vue Notification UI', 
+  'A simple push the notification ui with Vuejs',
+  'success', 
+  async () => {
+    console.log('Clicked notification')
+  }, 
+  'A minute ago'
+)
 ```
+
+## Notification options
+
+| params        | default           | description  |
+| :------------- |:-------------| -----|
+| title      | string: `required: true` |  |
+| body      | string: `required: true`      |  |
+| icon | string: `optional` | - Absolute file image <br/> - success <br/> - info <br/> - warning <br/> - danger |
+| callback | function: `optional` | |

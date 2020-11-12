@@ -1,5 +1,6 @@
 // eslint-disable-next-line no-unused-vars
 import './src/assets/css/notification.css'
+import './src/assets/css/animate.min.css'
 import Notification from "./src/Notification"
 import store from "./src/store"
 
@@ -18,7 +19,7 @@ export default {
     }
 
     // eslint-disable-next-line no-unused-vars
-    Vue.prototype.$notification = (title, body, dateTime, icon = null, handleClick = null) => {
+    Vue.prototype.$notification = (title, body, icon = null, handleClick = null, dateTime = null) => {
       vm.addNewNotification(Math.random(), title, body, dateTime, icon, handleClick)
     }
   }
