@@ -1,7 +1,7 @@
 {
   "name": "vue-notification-ui",
-  "version": "1.0.3",
-  "description": "Vue Notification UI",
+  "version": "1.0.4",
+  "description": "A simple notification ui with Vuejs",
   "main": "dist/vue-notification-ui.ssr.js",
   "browser": "dist/vue-notification-ui.esm.js",
   "module": "dist/vue-notification-ui.esm.js",
@@ -49,11 +49,12 @@
     "node": ">=12"
   },
   "keywords": [
+    "notifications",
     "vuejs",
-    "plugins",
-    "notification",
+    "vue",
     "toastr",
-    "notification-ui"
+    "notification",
+    "toastr-notification"
   ],
   "author": "HEL Mab",
   "license": "ISC",
