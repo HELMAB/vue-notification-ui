@@ -1,19 +1,16 @@
 {
   "name": "vue-notification-ui",
-  "version": "1.0.0",
-  "description": "",
-
+  "version": "1.0.3",
+  "description": "Vue Notification UI",
   "main": "dist/vue-notification-ui.ssr.js",
   "browser": "dist/vue-notification-ui.esm.js",
   "module": "dist/vue-notification-ui.esm.js",
   "unpkg": "dist/vue-notification-ui.min.js",
-
   "files": [
     "dist/*",
     "src/**/*.vue"
   ],
   "sideEffects": false,
-
   "scripts": {
     "serve": "vue-cli-service serve dev/serve.js",
     "prebuild": "rimraf ./dist",
@@ -22,10 +19,10 @@
     "build:es": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format es",
     "build:unpkg": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format iife"
   },
-
   "dependencies": {
+    "font-awesome": "^4.7.0",
+    "vuex": "^3.5.1"
   },
-
   "devDependencies": {
     "@babel/core": "^7.14.6",
     "@babel/preset-env": "^7.14.7",
@@ -50,5 +47,22 @@
   },
   "engines": {
     "node": ">=12"
-  }
+  },
+  "keywords": [
+    "vuejs",
+    "plugins",
+    "notification",
+    "toastr",
+    "notification-ui"
+  ],
+  "author": "HEL Mab",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HELMAB/vue-notification-ui.git"
+  },
+  "bugs": {
+    "url": "https://github.com/HELMAB/vue-notification-ui/issues"
+  },
+  "homepage": "https://github.com/HELMAB/vue-notification-ui#README"
 }
