@@ -83,7 +83,7 @@ export default {
         case 'warning':
           return 'exclamation'
         case 'danger':
-          return 'remove'
+          return 'times'
         default:
           return 'bell'
       }

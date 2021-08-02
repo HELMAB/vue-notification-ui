@@ -1,18 +1,26 @@
 <script>
-import Vue from 'vue';
-// Uncomment import and local "components" registration if library is not registered globally.
-// import { VueNotificationUiSample } from '@/entry.esm';
+import Vue from "vue";
 
 export default Vue.extend({
-  name: 'ServeDev',
-  // components: {
-  //  VueNotificationUiSample,
-  // }
+  name: "ServeDev",
+  methods: {
+    notify() {
+      this.$notification(
+        "Good job!",
+        "You clicked the button!",
+        "info",
+        async () => {
+          console.log("Clicked notification");
+        },
+        "A minute ago"
+      );
+    },
+  },
 });
 </script>
 
 <template>
   <div id="app">
-    <vue-notification-ui-sample />
+    <button @click="notify">Notify</button>
   </div>
 </template>

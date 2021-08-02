@@ -3,7 +3,7 @@ Vue Notification UI
 
 ![Alt](./src/assets/img/vue-notification-ui.png)
 
-A simple push the notification ui with Vuejs
+A simple notification ui with Vuejs
 
 ## Installation
 
@@ -29,8 +29,8 @@ Vue.use(notification, {
 
 // call $notification api
 this.$notification(
-  'Vue Notification UI', 
-  'A simple push the notification ui with Vuejs',
+  'Good job!', 
+  'You clicked the button!',
   'success', 
   async () => {
     console.log('Clicked notification')
